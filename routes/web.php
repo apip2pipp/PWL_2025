@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/about', function () {
-    return ('2341760159 and My Name Muhammad Afif Khosyidaki');
+// Route::get('/about', function () {
+//     return ('2341760159 and My Name Muhammad Afif Khosyidaki');
+// });
+
+Route::get('/user/{name}', function ($name){
+    return 'My name is '.$name;
 });
