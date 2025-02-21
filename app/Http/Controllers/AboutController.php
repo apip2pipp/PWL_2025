@@ -9,8 +9,8 @@ class AboutController extends Controller
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request)
+    public function about()
     {
-        //
+        return 'Name : M Afif K <br> NIM :2341760159';
     }
 }

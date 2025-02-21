@@ -97,18 +97,40 @@ use App\Http\Controllers\PageController;
 
 // Route::get('/hello', [WelcomeController:: class, 'hello']);
 
-Route::get('/', [PageController::class, 'index']); // Menampilkan pesan 'Welcome'
-Route::get('/about', [PageController::class, 'about']); // Menampilkan nama dan NIM
-Route::get('/articles/{id}', [PageController::class, 'articles']); // Menampilkan artikel berdasarkan id
+// Route::get('/', [PageController::class, 'index']); // Menampilkan pesan 'Welcome'
+// Route::get('/about', [PageController::class, 'about']); // Menampilkan nama dan NIM
+// Route::get('/articles/{id}', [PageController::class, 'articles']); // Menampilkan artikel berdasarkan id
 
-Route::post('/', [PageController::class, 'index']); // Menampilkan pesan 'Welcome'
-Route::post('/about', [PageController::class, 'about']); // Menampilkan nama dan NIM
-Route::post('/articles/{id}', [PageController::class, 'articles']); // Menampilkan artikel berdasarkan id
+// Route::post('/', [PageController::class, 'index']); // Menampilkan pesan 'Welcome'
+// Route::post('/about', [PageController::class, 'about']); // Menampilkan nama dan NIM
+// Route::post('/articles/{id}', [PageController::class, 'articles']); // Menampilkan artikel berdasarkan id
 
-Route::put('/', [PageController::class, 'index']); // Menampilkan pesan 'Welcome'
-Route::put('/about', [PageController::class, 'about']); // Menampilkan nama dan NIM
-Route::put('/articles/{id}', [PageController::class, 'articles']); // Menampilkan artikel berdasarkan id
+// Route::put('/', [PageController::class, 'index']); // Menampilkan pesan 'Welcome'
+// Route::put('/about', [PageController::class, 'about']); // Menampilkan nama dan NIM
+// Route::put('/articles/{id}', [PageController::class, 'articles']); // Menampilkan artikel berdasarkan id
 
-Route::delete('/', [PageController::class, 'index']); // Menampilkan pesan 'Welcome'
-Route::delete('/about', [PageController::class, 'about']); // Menampilkan nama dan NIM
-Route::delete('/articles/{id}', [PageController::class, 'articles']); // Menampilkan artikel berdasarkan id
+// Route::delete('/', [PageController::class, 'index']); // Menampilkan pesan 'Welcome'
+// Route::delete('/about', [PageController::class, 'about']); // Menampilkan nama dan NIM
+// Route::delete('/articles/{id}', [PageController::class, 'articles']); // Menampilkan artikel berdasarkan id
+
+
+// use App\Http\Controllers\HomeController;
+// use App\Http\Controllers\AboutController;
+// use App\Http\Controllers\ArticleController;
+
+// // Rute untuk halaman utama (Welcome)
+// Route::get('/index', HomeController::class,'index');
+
+// // Rute untuk halaman tentang (Name dan NIM)
+// Route::get('/about', AboutController::class,'about');
+
+// // Rute untuk halaman artikel dinamis berdasarkan ID
+// Route::get('/articles/{id}', ArticleController::class,'article');
+
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ArticleController;
+
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/about', [HomeController::class, 'about']);
+Route::get('/articles/{id}', [HomeController::class, 'article']);
