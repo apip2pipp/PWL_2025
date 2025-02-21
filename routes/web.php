@@ -15,6 +15,11 @@
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ArticleController;
+
 // Route::get('/hello', function () {
 //     return 'Hello world';
 // });
@@ -113,7 +118,7 @@ use App\Http\Controllers\PageController;
 // Route::delete('/about', [PageController::class, 'about']); // Menampilkan nama dan NIM
 // Route::delete('/articles/{id}', [PageController::class, 'articles']); // Menampilkan artikel berdasarkan id
 
-
+//with invoke
 // use App\Http\Controllers\HomeController;
 // use App\Http\Controllers\AboutController;
 // use App\Http\Controllers\ArticleController;
@@ -127,10 +132,17 @@ use App\Http\Controllers\PageController;
 // // Rute untuk halaman artikel dinamis berdasarkan ID
 // Route::get('/articles/{id}', ArticleController::class,'article');
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\ArticleController;
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/about', [HomeController::class, 'about']);
-Route::get('/articles/{id}', [HomeController::class, 'article']);
+// Route::get('/', [HomeController::class, 'index']);
+// Route::get('/about', [HomeController::class, 'about']);
+// Route::get('/articles/{id}', [HomeController::class, 'article']);
+
+use App\Http\Controllers\PhotoController;
+
+// Route::resource('photos', PhotoController::class);
+
+Route::resource('photos', PhotoController::class)->only([ 'index', 'show'
+]);
+
+Route::resource('photos', PhotoController::class)->except([ 'create', 'store', 'update', 'destroy'
+]);
