@@ -1,5 +1,6 @@
 
 <?php
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,8 +12,9 @@
 |
 */
 
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PageController;
 // Route::get('/hello', function () {
 //     return 'Hello world';
 // });
@@ -92,3 +94,21 @@ use Illuminate\Support\Facades\Route;
 
 // Route::redirect('/here', '/there');
 // Route::view('/welcome', 'welcome'); Route::view('/welcome', 'welcome', ['name' => 'Taylor']);
+
+// Route::get('/hello', [WelcomeController:: class, 'hello']);
+
+Route::get('/', [PageController::class, 'index']); // Menampilkan pesan 'Welcome'
+Route::get('/about', [PageController::class, 'about']); // Menampilkan nama dan NIM
+Route::get('/articles/{id}', [PageController::class, 'articles']); // Menampilkan artikel berdasarkan id
+
+Route::post('/', [PageController::class, 'index']); // Menampilkan pesan 'Welcome'
+Route::post('/about', [PageController::class, 'about']); // Menampilkan nama dan NIM
+Route::post('/articles/{id}', [PageController::class, 'articles']); // Menampilkan artikel berdasarkan id
+
+Route::put('/', [PageController::class, 'index']); // Menampilkan pesan 'Welcome'
+Route::put('/about', [PageController::class, 'about']); // Menampilkan nama dan NIM
+Route::put('/articles/{id}', [PageController::class, 'articles']); // Menampilkan artikel berdasarkan id
+
+Route::delete('/', [PageController::class, 'index']); // Menampilkan pesan 'Welcome'
+Route::delete('/about', [PageController::class, 'about']); // Menampilkan nama dan NIM
+Route::delete('/articles/{id}', [PageController::class, 'articles']); // Menampilkan artikel berdasarkan id
